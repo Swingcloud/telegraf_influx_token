@@ -17,5 +17,8 @@ services:
       - influxdb
     volumes:
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
+    environment: 
+      - TOKEN=test_token
+      - TOKEN_LIST_URL=${TOKEN_LIST_URL}
     depends_on:
       - influxdb_cli
